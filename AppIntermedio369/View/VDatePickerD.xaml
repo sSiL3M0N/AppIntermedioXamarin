@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout Margin="20">
             <Label
-                Text="Modo de trabajar de un Pciker"
+                Text="Modo de trabajar de un Pciker con gitHub"
                 HorizontalOptions="Center"
                 />
 
