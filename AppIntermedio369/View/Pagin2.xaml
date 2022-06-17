@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIntermedio369.View.Pagin2"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <Grid>
+        <Image 
+            Source="atras.png"
+            HeightRequest="40"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Margin="20">
+            
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                   Command="{Binding Volver}"
+                />
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+   
+</ContentPage>

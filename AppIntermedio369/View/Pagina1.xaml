@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIntermedio369.View.Pagina1"
+             NavigationPage.HasNavigationBar="False"
+             >
+    
+    <Grid>
+        <StackLayout VerticalOptions="CenterAndExpand">
+
+            <StackLayout Orientation="Horizontal" Margin="10">
+
+                <Label Text="Escribe"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       />
+
+                <Entry Placeholder="Escribe una información aquí"
+                       VerticalTextAlignment="Center"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="10,0,0,0"
+                        Text="{Binding Num1}"
+                       Keyboard="Numeric"
+                        />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="10">
+
+                <Label Text="Escribe"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       />
+
+                <Entry Placeholder="Escribe una información aquí"
+                       VerticalTextAlignment="Center"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="10,0,0,0"
+                        Text="{Binding Num2}" 
+                       Keyboard="Numeric"
+                        />
+            </StackLayout>
+
+            <Button Text="Click!"
+                VerticalOptions="Center" 
+                HorizontalOptions="CenterAndExpand"
+                Command="{Binding ProcesoSimpleCommand}"
+                   />
+            <Label Text="{Binding Rep}"
+                   HorizontalOptions="Center"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   />
+
+     
+            <Button 
+                Text=">>>"
+                FontSize="30"
+                Padding="20"
+                CornerRadius="10"
+                HorizontalOptions="Center"
+                Command="{Binding Siguiente}"
+                />
+
+            <Button
+                Text="PickerTime >"
+                HorizontalOptions="Center"
+                CornerRadius="10"
+                FontAttributes="Italic"
+                Command="{Binding PaginaPicker}"
+                />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="{Binding SeleccionaTipoElementoV}" TextColor="White"
+                       HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"
+                       
+                       />
+                <Label Text="{Binding SeleccionaTipoElementoP}" TextColor="White"
+                       HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"
+                       
+                       />
+                <Picker 
+                    Title="Opciones" 
+                    VerticalOptions="CenterAndExpand" 
+                    CharacterSpacing="1" 
+                    FontAttributes="Italic"
+                    SelectedItem="{Binding SeleccionaTipoElementoP}"
+                    >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Baboon</x:String>
+                            <x:String>Capuchin Monkey</x:String>
+                            <x:String>Blue Monkey</x:String>
+                            <x:String>Squirrel Monkey</x:String>
+                            <x:String>Golden Lion Tamarin</x:String>
+                            <x:String>Howler Monkey</x:String>
+                            <x:String>Japanese Macaque</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+
+        </StackLayout>
+
+    
+        
+    </Grid>
+ 
+</ContentPage>

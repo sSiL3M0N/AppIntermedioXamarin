@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIntermedio369.View.VDatePickerD">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label
+                Text="Modo de trabajar de un Pciker"
+                HorizontalOptions="Center"
+                />
+
+            <DatePicker
+                Date="{Binding Fecha}"
+                >
+                <DatePicker.Format>
+                    dddd/MMMM/yyyy     
+                </DatePicker.Format>
+                
+            </DatePicker>
+
+            <Label
+                Text="{Binding FechaMostar}"
+                HorizontalOptions="Center"
+                />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
