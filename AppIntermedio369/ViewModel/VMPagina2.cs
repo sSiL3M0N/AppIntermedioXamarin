@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using AppIntermedio369.Model;
 
 namespace AppIntermedio369.ViewModel
 {
@@ -12,12 +13,22 @@ namespace AppIntermedio369.ViewModel
         #region VARIABLES
 
         private string _Num1;
+        public List<MUsuario> listaUsuarios { get; set; }
         #endregion
 
         #region CONSTRUCTOR
         public VMPagina2(INavigation navigation)
         {
             this.Navigation = navigation;
+
+            listaUsuarios = new List<MUsuario>
+            {
+                new MUsuario() { Nombre = "Erlin", Imagen = "imagen.ong" },
+                new MUsuario() { Nombre = "Jorge", Imagen = "imagen.ong" },
+                new MUsuario() { Nombre = "Raul", Imagen = "imagen.ong" },
+                new MUsuario() { Nombre = "Emily", Imagen = "imagen.ong" }
+            };
+
         }
         #endregion
 
@@ -36,15 +47,18 @@ namespace AppIntermedio369.ViewModel
             await Navigation.PopAsync();
         }
 
-        public void ProcesoSimple()
+        public async void ProcesoSimple()
         {
+        }
 
+        public async Task SeleccionaItem(MUsuario listaUsuarios) {
+            await DisplayAlert("-", $"{ listaUsuarios.Nombre }", "---");
         }
         #endregion
 
         #region COMANDOS
         public ICommand Volver => new Command(async () => await ProcesoAsyncrono());
-
+        public ICommand Seleccionar => new Command<MUsuario>(async (p) => await SeleccionaItem(p));
         public ICommand ProcesoSimpleCommand => new Command(ProcesoSimple);
         #endregion
     }
