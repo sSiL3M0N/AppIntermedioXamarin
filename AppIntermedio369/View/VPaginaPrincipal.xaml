@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppIntermedio369.View.VPaginaPrincipal"
+             NavigationPage.HasNavigationBar="True"
+             Title="Proyectos Trabajados">
+    <Grid>
+        <StackLayout >
+            <CollectionView 
+                ItemsSource="{Binding ListaPaginas}" 
+                x:Name="lElementos"
+                Margin="6">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="2" />
+                </CollectionView.ItemsLayout>
+                
+                <CollectionView.ItemTemplate >
+                    <DataTemplate >
+                        <Frame CornerRadius="2">
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label
+                                Text="{Binding Nombre}"
+                                FontAttributes="Bold"
+                                    HorizontalOptions="StartAndExpand"
+                                ></Label>
+
+                                <Image
+                                    Source="{Binding Icono}"
+                                    HorizontalOptions="EndAndExpand"
+                                    ></Image>
+                            </StackLayout>
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Path=BindingContext.Alerta,Source={x:Reference lElementos}}"
+                                    CommandParameter="{Binding .}"
+                                    >
+                                    
+                                </TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </Grid>
+</ContentPage>

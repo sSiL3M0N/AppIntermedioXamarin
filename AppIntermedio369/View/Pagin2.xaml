@@ -19,8 +19,6 @@
             </Image.GestureRecognizers>
         </Image>
 
-        
-
         <CollectionView
             ItemsSource="{Binding listaUsuarios}"
             Margin="10,70"
@@ -41,11 +39,11 @@
                             <Label
                        Text="{Binding Nombre}"
                        FontAttributes="Bold"
-                                HorizontalOptions="CenterAndExpand"
+                                HorizontalOptions="StartAndExpand"
                                 />
 
                             <Image
-                            HorizontalOptions="StartAndExpand"
+                            HorizontalOptions="EndAndExpand"
                             Source="{Binding Imagen}"
                             />
                         

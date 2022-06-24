@@ -43,6 +43,7 @@ namespace AppIntermedio369.ViewModel
         #region PROCESOS
         public async Task ProcesoAsyncrono()
         {
+            await Navigation.PopAsync();
         }
 
         public void ProcesoSimple()
@@ -52,7 +53,7 @@ namespace AppIntermedio369.ViewModel
         #endregion
 
         #region COMANDOS
-        public ICommand SiguientePagina => new Command(async () => await ProcesoAsyncrono());
+        public ICommand Back => new Command(async () => await ProcesoAsyncrono());
 
         public ICommand ProcesoSimpleCommand => new Command(ProcesoSimple);
         #endregion

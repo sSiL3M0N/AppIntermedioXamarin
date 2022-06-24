@@ -11,7 +11,7 @@ namespace AppIntermedio369
         {
             InitializeComponent();
 
-            MainPage =new NavigationPage(new Pagina1());
+            MainPage =new NavigationPage(new VPaginaPrincipal());
         }
 
         protected override void OnStart()

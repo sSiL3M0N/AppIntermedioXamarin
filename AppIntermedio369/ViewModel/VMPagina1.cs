@@ -64,6 +64,11 @@ namespace AppIntermedio369.ViewModel
             await Navigation.PushAsync(new Pagin2());
         }
 
+        public async Task Back()
+        {
+            await Navigation.PopAsync();
+        }
+
         public async Task ProcesoAsyncrono2()
         {
             await Navigation.PushAsync(new VDatePickerD());
@@ -79,6 +84,8 @@ namespace AppIntermedio369.ViewModel
         public ICommand Siguiente => new Command(async () => await ProcesoAsyncrono());
 
         public ICommand PaginaPicker => new Command(async () => await ProcesoAsyncrono2());
+
+        public ICommand Atras => new Command(async () => await Back());
 
         public ICommand ProcesoSimpleCommand => new Command(ProcesoSimple);
         #endregion

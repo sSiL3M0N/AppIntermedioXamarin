@@ -6,8 +6,22 @@
              >
     
     <Grid>
+        <Image
+                Source="atras.png"
+                HorizontalOptions="Start"
+            VerticalOptions="Start"
+            Margin="10">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Atras}">
+                </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+            
+        </Image>
+
         <StackLayout VerticalOptions="CenterAndExpand">
 
+           
+            
             <StackLayout Orientation="Horizontal" Margin="10">
 
                 <Label Text="Escribe"
@@ -50,7 +64,7 @@
                    FontAttributes="Bold"
                    />
 
-     
+        <!--
             <Button 
                 Text=">>>"
                 FontSize="30"
@@ -66,7 +80,7 @@
                 CornerRadius="10"
                 FontAttributes="Italic"
                 Command="{Binding PaginaPicker}"
-                />
+                />-->
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="{Binding SeleccionaTipoElementoV}" TextColor="White"
                        HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"
